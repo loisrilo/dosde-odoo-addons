@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="wash_turn_view_tree" model="ir.ui.view">
+        <field name="name">wash.turn.tree</field>
+        <field name="model">wash.turn</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="user_id"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="wash_turn_action">
+        <field name="name">Washing Turns</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wash.turn</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="parent_menu_purchase_request"
+        name="Washing Machine"
+        groups="group_washing_machine_user"
+        action="wash_turn_action"
+    />
+
+</odoo>
