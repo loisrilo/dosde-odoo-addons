@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="money_pot_view_tree" model="ir.ui.view">
+        <field name="name">money.pot.tree</field>
+        <field name="model">money.pot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="money_pot_view_form" model="ir.ui.view">
+        <field name="name">money.pot.tree</field>
+        <field name="model">money.pot</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_ids"/>
+                        <field name="item_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="money_pot_action">
+        <field name="name">Money Pot</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">money.pot</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="parent_menu_money_pot"
+        name="Money Pot"
+        groups="group_money_pot_user"
+    />
+    
+    <menuitem id="menu_money_pot"
+        name="Pots"
+        parent="parent_menu_money_pot"
+        action="money_pot_action"
+        sequence="40"
+    />
+
+</odoo>
