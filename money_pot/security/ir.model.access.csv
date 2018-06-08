@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+money_pot_user,money.pot user,model_money_pot,group_money_pot_user,1,0,0,0
+money_pot_manager,money.pot manager,model_money_pot,group_money_pot_manager,1,1,1,1
+money_item_user,money.item user,model_money_item,group_money_pot_user,1,0,1,0
+money_item_manager,money.item manager,model_money_item,group_money_pot_manager,1,1,1,1

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.module.category" id="module_category_money_pot">
+        <field name="name">Money Pot</field>
+    </record>
+
+    <record id="group_money_pot_user" model="res.groups">
+        <field name="name">Money Pot User</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="module_category_money_pot"/>
+    </record>
+
+    <record id="group_money_pot_manager" model="res.groups">
+        <field name="name">Money Pot Manager</field>
+        <field name="implied_ids" eval="[(4, ref('money_pot.group_money_pot_user'))]"/>
+        <field name="category_id" ref="module_category_money_pot"/>
+    </record>
+
+</odoo>
