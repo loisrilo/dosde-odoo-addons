@@ -13,15 +13,25 @@
         </field>
     </record>
 
+    <record id="wash_turn_view_calendar" model="ir.ui.view">
+        <field name="name">wash.turn.calendar</field>
+        <field name="model">wash.turn</field>
+        <field name="arch" type="xml">
+            <calendar date_start="date" color="user_id" mode="month">
+                <field name="user_id"/>
+            </calendar>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="wash_turn_action">
         <field name="name">Washing Turns</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wash.turn</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,calendar</field>
     </record>
 
-    <menuitem id="parent_menu_purchase_request"
+    <menuitem id="parent_menu_washing_machine"
         name="Washing Machine"
         groups="group_washing_machine_user"
         action="wash_turn_action"
