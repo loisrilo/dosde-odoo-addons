@@ -6,6 +6,7 @@ from odoo import api, fields, models
 class MoneyItem(models.Model):
     _name = "money.item"
     _order = "id desc"
+    _rec_name = "user_id"
 
     @api.multi
     def _get_pot_id(self):
@@ -29,4 +30,4 @@ class MoneyItem(models.Model):
         default=fields.Date.today,
     )
     amount = fields.Float()
-    notes = fields.Html()
+    description = fields.Char()
