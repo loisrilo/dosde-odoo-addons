@@ -6,7 +6,7 @@
         <field name="name">money.item.tree</field>
         <field name="model">money.item</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree>
                 <field name="pot_id"/>
                 <field name="user_id"/>
                 <field name="amount"/>
@@ -15,12 +15,47 @@
         </field>
     </record>
 
+     <record id="money_item_view_form" model="ir.ui.view">
+        <field name="name">money.item.form</field>
+        <field name="model">money.item</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="description"/>
+                            <field name="date"/>
+
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="pot_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="money_item_view_pivot" model="ir.ui.view">
+        <field name="name">money.item.pivot</field>
+        <field name="model">money.item</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="user_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="money_item_action">
         <field name="name">Money Item</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">money.item</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form,pivot</field>
     </record>
 
     <menuitem id="menu_money_item"
