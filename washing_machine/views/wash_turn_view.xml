@@ -6,10 +6,27 @@
         <field name="name">wash.turn.tree</field>
         <field name="model">wash.turn</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree decoration-muted="past">
                 <field name="user_id"/>
                 <field name="date"/>
+                <field name="past" invisible="1"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="wash_turn_view_form" model="ir.ui.view">
+        <field name="name">wash.turn.form</field>
+        <field name="model">wash.turn</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="date"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 
@@ -23,12 +40,23 @@
         </field>
     </record>
 
+    <record id="wash_turn_view_pivot" model="ir.ui.view">
+        <field name="name">wash.turn.pivot</field>
+        <field name="model">wash.turn</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="user_id" type="row"/>
+                <field name="date" interval="month" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="wash_turn_action">
         <field name="name">Washing Turns</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wash.turn</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,calendar</field>
+        <field name="view_mode">tree,form,calendar,pivot</field>
     </record>
 
     <menuitem id="parent_menu_washing_machine"
