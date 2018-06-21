@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-wash_turn_user,wash.turn user,model_wash_turn,group_washing_machine_user,1,0,1,0
+wash_turn_user,wash.turn user,model_wash_turn,group_washing_machine_user,1,1,1,0
 wash_turn_manager,wash.turn manager,model_wash_turn,group_washing_machine_manager,1,1,1,1
