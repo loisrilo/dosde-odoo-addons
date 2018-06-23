@@ -61,6 +61,7 @@
 
     <menuitem id="parent_menu_washing_machine"
         name="Washing Machine"
+        web_icon="washing_machine,static/description/icon.png"
         groups="group_washing_machine_user"
         action="wash_turn_action"
     />

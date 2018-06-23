@@ -38,6 +38,7 @@
 
     <menuitem id="parent_menu_money_pot"
         name="Money Pot"
+        web_icon="money_pot,static/description/icon.png"
         groups="group_money_pot_user"
     />
     
