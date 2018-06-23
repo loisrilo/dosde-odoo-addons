@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.3 (unknown)"
+   width="60"
+   height="60"
+   viewBox="0 0 60 60"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="icon.png"
+   inkscape:export-xdpi="204.8"
+   inkscape:export-ydpi="204.8">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1053"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="27.749793"
+     inkscape:cy="6.3924492"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="0,41.75"
+       orientation="1,0"
+       id="guide3360"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="60,60.074219"
+       orientation="1,0"
+       id="guide3362"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="0.17578125,60"
+       orientation="0,1"
+       id="guide3364"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="58.71196,-0.0055242717"
+       orientation="0,1"
+       id="guide3366"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="42.000001,11.3125"
+       orientation="-0.8660254,0.5"
+       id="guide3347"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="5.7894369,42.669475"
+       orientation="-0.8660254,0.5"
+       id="guide23"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+  </sodipodi:namedview>
+  <rect
+     style="opacity:1;fill:#7fff2a;fill-opacity:1"
+     id="rect4147"
+     width="60"
+     height="60"
+     x="0"
+     y="0" />
+  <path
+     style="opacity:1;fill:#000000;fill-opacity:0.39215686"
+     d="m 0,27.358124 v 32.6474 l 35.465537,0 L 42.000001,48.6875 24.758242,24.419423 5.3164389,18.149782 Z"
+     id="rect4171"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccccc" />
+  <g
+     id="g4169"
+     transform="matrix(0.3061173,0,0,0.3061173,-1.0360053,-1.0457906)"
+     style="fill:#ffffff;stroke:none" />
+  <path
+     inkscape:connector-curvature="0"
+     d="m 54.169682,17.612971 -15.12072,-7.494347 c -1.560999,2.158992 -5.01694,3.665628 -9.047582,3.665628 -4.030634,0 -7.486575,-1.506636 -9.047581,-3.665628 L 5.8330866,17.612971 c -0.613528,0.310645 -0.862047,1.056198 -0.559168,1.669726 l 4.442247,8.892253 c 0.3106494,0.613527 1.0561994,0.862045 1.6697264,0.559166 l 4.395642,-2.15123 c 0.823212,-0.403839 1.786223,0.194157 1.786223,1.118329 v 19.694986 c 0,1.374609 1.110558,2.485175 2.485168,2.485175 h 19.881378 c 1.37461,0 2.485175,-1.110566 2.485175,-2.485175 V 27.693449 c 0,-0.916406 0.963004,-1.522167 1.786216,-1.118325 l 4.39565,2.151227 c 0.613527,0.310644 1.359077,0.06213 1.669726,-0.559167 l 4.450009,-8.884487 c 0.310649,-0.613528 0.06216,-1.366848 -0.551397,-1.669726 z"
+     id="path2"
+     style="stroke-width:0.07766163;fill:#aa0000" />
+</svg>
