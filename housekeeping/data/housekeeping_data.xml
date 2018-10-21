@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+
+    <record id="ir_cron_auto_house_task_turn" model="ir.cron">
+        <field name="name">Housekeeping: auto-generate turns</field>
+        <field name="model_id" ref="housekeeping.model_house_task"/>
+        <field name="state">code</field>
+        <field name="code">model.search([]).generate()</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+
+</odoo>

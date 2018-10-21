@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+house_task_user,house.task user,model_house_task,group_housekeeping_user,1,0,0,0
+house_task_manager,house.task manager,model_house_task,group_housekeeping_manager,1,1,1,1
+house_task_turn_user,house.task.turn user,model_house_task_turn,group_housekeeping_user,1,1,1,0
+house_task_turn_manager,house.task.turn manager,model_house_task_turn,group_housekeeping_manager,1,1,1,1
