@@ -1,6 +1,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class MoneyItem(models.Model):
@@ -31,3 +32,9 @@ class MoneyItem(models.Model):
     )
     amount = fields.Float()
     description = fields.Char()
+
+    @api.constrains('pot_id')
+    def _check_pot_open(self):
+        for rec in self:
+            if rec.pot_id.state == 'closed':
+                raise ValidationError(_('Pot is closed.'))

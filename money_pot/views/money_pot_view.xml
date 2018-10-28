@@ -8,20 +8,32 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
 
     <record id="money_pot_view_form" model="ir.ui.view">
-        <field name="name">money.pot.tree</field>
+        <field name="name">money.pot.form</field>
         <field name="model">money.pot</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_open" type="object" string="Re-Open" states="closed" groups="money_pot.group_money_pot_manager"/>
+                    <button name="action_close" type="object" string="Close" states="open" groups="money_pot.group_money_pot_manager"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_items"
+                                string="Items"
+                                icon="fa-list-ul"
+                                class="oe_stat_button"
+                                type="object"/>
+                    </div>
                     <group>
                         <field name="name"/>
-                        <field name="user_ids"/>
-                        <field name="item_ids"/>
+                        <field name="user_ids" widget="many2many_tags"/>
                     </group>
                 </sheet>
             </form>
