@@ -50,6 +50,20 @@
         </field>
     </record>
 
+    <record id="money_item_view_search" model="ir.ui.view">
+        <field name="name">money.item.search</field>
+        <field name="model">money.item</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="user_id"/>
+                <field name="pot_id"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_user" string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="money_item_action">
         <field name="name">Money Item</field>
         <field name="type">ir.actions.act_window</field>
