@@ -47,9 +47,9 @@ class HouseTaskTurn(models.Model):
     @api.multi
     def _compute_late(self):
         for rec in self.filtered(lambda r: not r.date_done):
-            rec.past = fields.Date.from_string(rec.date_due) > date.today()
+            rec.late = fields.Date.from_string(rec.date_due) < date.today()
         for rec in self.filtered(lambda r: r.date_done):
-            rec.past = fields.Date.from_string(rec.date_due) < fields.Date.from_string(rec.date_done)
+            rec.late = fields.Date.from_string(rec.date_due) < fields.Date.from_string(rec.date_done)
 
     @api.model
     def create(self, vals):
