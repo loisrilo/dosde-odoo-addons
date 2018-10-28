@@ -6,7 +6,7 @@
         <field name="name">house.task.turn.tree</field>
         <field name="model">house.task.turn</field>
         <field name="arch" type="xml">
-            <tree decoration-warning="late">
+            <tree decoration-danger="late">
                 <field name="name"/>
                 <field name="user_id"/>
                 <field name="date_due"/>
