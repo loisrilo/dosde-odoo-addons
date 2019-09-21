@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_bank_statement_line_tree" model="ir.ui.view">
+        <field name="name">account.bank.statement.line.tree</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="account.view_bank_statement_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">true</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="bank_statement_line_action">
+        <field name="name">Bank Statement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.bank.statement.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+    <menuitem id="menu_bank_statement_line"
+        name="Bank Statement Lines"
+        parent="account.menu_finance"
+        action="bank_statement_line_action"
+        sequence="15"
+    />
+
+</odoo>
