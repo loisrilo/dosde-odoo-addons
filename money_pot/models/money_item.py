@@ -12,7 +12,7 @@ class MoneyItem(models.Model):
     @api.multi
     def _get_pot_id(self):
         return self.env['money.pot'].search(
-            [('user_ids', '=', self.env.uid)],
+            [('user_ids', '=', self.env.uid), ('state', '=', 'open')],
             order="id desc", limit=1)
 
     pot_id = fields.Many2one(
