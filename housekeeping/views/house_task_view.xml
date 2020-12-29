@@ -22,11 +22,9 @@
                     <button name="generate" type="object" string="Auto-Generate" class="btn-primary"/>
                 </header>
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
-                        </button>
-                    </div>
+                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <field name="active" invisible="1" />
+                    <div class="oe_button_box" name="button_box"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name"/>
@@ -51,32 +49,10 @@
         </field>
     </record>
 
-    <!--<record id="house_task_view_calendar" model="ir.ui.view">-->
-        <!--<field name="name">house.task.calendar</field>-->
-        <!--<field name="model">house.task</field>-->
-        <!--<field name="arch" type="xml">-->
-            <!--<calendar date_start="date" color="user_id" mode="month">-->
-                <!--<field name="user_id"/>-->
-            <!--</calendar>-->
-        <!--</field>-->
-    <!--</record>-->
-
-    <!--<record id="house_task_view_pivot" model="ir.ui.view">-->
-        <!--<field name="name">house.task.pivot</field>-->
-        <!--<field name="model">house.task</field>-->
-        <!--<field name="arch" type="xml">-->
-            <!--<pivot>-->
-                <!--<field name="user_id" type="row"/>-->
-                <!--<field name="date" interval="month" type="col"/>-->
-            <!--</pivot>-->
-        <!--</field>-->
-    <!--</record>-->
-
     <record model="ir.actions.act_window" id="house_task_action">
         <field name="name">Housekeeping Task</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">house.task</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
 
