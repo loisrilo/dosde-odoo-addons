@@ -6,10 +6,10 @@ from odoo.exceptions import ValidationError
 
 class MoneyItem(models.Model):
     _name = "money.item"
+    _description = "Money Item"
     _order = "id desc"
     _rec_name = "user_id"
 
-    @api.multi
     def _get_pot_id(self):
         return self.env['money.pot'].search(
             [('user_ids', '=', self.env.uid), ('state', '=', 'open')],
