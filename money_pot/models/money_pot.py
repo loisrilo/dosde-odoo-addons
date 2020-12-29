@@ -5,6 +5,7 @@ from odoo import api, fields, models
 
 class MoneyPot(models.Model):
     _name = "money.pot"
+    _description = "Money Pot"
     _order = "id desc"
 
     name = fields.Char(required=True)
@@ -27,15 +28,12 @@ class MoneyPot(models.Model):
         ('name_uniq', 'unique (name)', "Pot name already exists"),
     ]
 
-    @api.multi
     def action_close(self):
         self.write({'state': 'closed'})
 
-    @api.multi
     def action_open(self):
         self.write({'state': 'open'})
 
-    @api.multi
     def action_open_items(self):
         action = self.env.ref('money_pot.money_item_action')
         result = action.read()[0]
