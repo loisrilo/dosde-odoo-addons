@@ -6,7 +6,7 @@
 Housekeeping
 ============
 
-Manage the housekeeping task:
+Manage housekeeping tasks:
 
 * Define tasks.
 * Auto-assign them periodically.

@@ -9,6 +9,7 @@ from odoo.exceptions import UserError
 
 class HouseTask(models.Model):
     _name = "house.task"
+    _description = "House Task"
 
     DEFAULT_PYTHON_CODE = """# Available variables:
     #  - env: Odoo Environment on which the action is triggered
@@ -72,7 +73,6 @@ class HouseTask(models.Model):
         }
         return vals
 
-    @api.multi
     def write(self, vals):
         prefix = vals.get("code_prefix")
         if prefix:
@@ -93,7 +93,6 @@ class HouseTask(models.Model):
             vals["sequence_id"] = sequence.id
         return super().create(vals)
 
-    @api.multi
     def _evaluate_python_code(self):
         eval_ctx = {'rec': self, 'env': self.env}
         try:
@@ -105,7 +104,6 @@ class HouseTask(models.Model):
                 "Error evaluating python code.\n %s") % error)
         return eval_ctx.get('next')
 
-    @api.multi
     def generate(self):
         turn_model = self.env['house.task.turn']
         for rec in self:

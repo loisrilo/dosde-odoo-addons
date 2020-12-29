@@ -12,7 +12,6 @@ class HouseTaskTurn(models.Model):
     _inherit = 'mail.thread'
     _order = "id desc"
 
-    # TODO: mails.
     name = fields.Char(default="/")
     house_task_id = fields.Many2one(
         string="Task",
@@ -24,19 +23,19 @@ class HouseTaskTurn(models.Model):
         string="Assigned to",
         default=lambda self: self.env.user,
         required=True,
-        track_visibility='onchange',
+        tracking=True,
     )
     state = fields.Selection(
         selection=[('pending', 'Pending'),
                    ('done', 'Done'),
                    ('cancel', 'Cancel')],
         default='pending',
-        track_visibility='onchange',
+        tracking=True,
     )
     date_due = fields.Date(
         string="Deadline",
         required=True,
-        track_visibility='onchange',
+        tracking=True,
     )
     date_done = fields.Date(
         string="Done Date",
@@ -44,7 +43,6 @@ class HouseTaskTurn(models.Model):
     notes = fields.Text()
     late = fields.Boolean(compute='_compute_late') # TODO: review late
 
-    @api.multi
     def _compute_late(self):
         for rec in self.filtered(lambda r: not r.date_done):
             rec.late = fields.Date.from_string(rec.date_due) < date.today()
@@ -63,13 +61,11 @@ class HouseTaskTurn(models.Model):
                 vals['name'] = sequence.next_by_id()
         return super().create(vals)
 
-    @api.multi
     def action_done(self):
         self.write({
             'state': 'done',
             'date_done': fields.Date.today(),
         })
 
-    @api.multi
     def action_cancel(self):
         self.write({'state': 'cancel'})
