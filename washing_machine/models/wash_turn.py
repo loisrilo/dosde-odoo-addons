@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError
 
 class WashTurn(models.Model):
     _name = "wash.turn"
+    _description = "Wash Turn"
     _order = "date desc"
     _rec_name = 'date'
 
@@ -30,13 +31,11 @@ class WashTurn(models.Model):
                 raise ValidationError(_(
                     "You cannot travel to the past, do you?"))
 
-    @api.multi
     def _compute_past(self):
         today = fields.Date.today()
         for rec in self:
             rec.past = rec.date < today
 
-    @api.multi
     def write(self, vals):
         user = self.env.user
         if (not user.has_group('washing_machine.group_washing_machine_manager')
