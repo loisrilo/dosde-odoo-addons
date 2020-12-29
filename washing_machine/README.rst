@@ -7,7 +7,7 @@ Whasing Machine
 ===============
 
 The ultimate (and totally hardcoded) module to end any flatmates discussion
-by setting washing turn efficiently!
+by setting washing turns efficiently!
 
 Credits
 =======
