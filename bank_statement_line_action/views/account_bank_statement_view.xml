@@ -17,7 +17,6 @@
         <field name="name">Bank Statement</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">account.bank.statement.line</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form,pivot</field>
     </record>
 

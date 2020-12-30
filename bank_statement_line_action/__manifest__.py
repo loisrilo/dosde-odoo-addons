@@ -3,7 +3,7 @@
     "name": "Account Statement Line Action",
     "summary": "Adds bank statement line action to access tree view and be "
                "able to easily import them.",
-    "version": "12.0.1.0.0",
+    "version": "13.0.1.0.0",
     "category": "Accounting",
     "website": "https://github.com/loisrilo/",
     "author": "Lois Rilo",
