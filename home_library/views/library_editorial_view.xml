@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="library_editorial_view_tree" model="ir.ui.view">
+        <field name="name">library.editorial.tree</field>
+        <field name="model">library.editorial</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="library_editorial_view_form" model="ir.ui.view">
+        <field name="name">library.editorial.form</field>
+        <field name="model">library.editorial</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="library_editorial_view_search" model="ir.ui.view">
+        <field name="name">library.editorial.search</field>
+        <field name="model">library.editorial</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_editorial_action">
+        <field name="name">Editorials</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.editorial</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_library_editorial"
+        name="Editorials"
+        parent="menu_home_library_data"
+        action="library_editorial_action"
+        sequence="20"
+    />
+
+</odoo>
