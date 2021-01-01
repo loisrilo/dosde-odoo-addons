@@ -7,6 +7,7 @@ from odoo.exceptions import ValidationError
 class LibraryAuthor(models.Model):
     _name = "library.author"
     _description = "Library Author"
+    _order = "name"
 
     name = fields.Char(required=True)
     book_ids = fields.One2many(

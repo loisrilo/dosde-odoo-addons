@@ -13,13 +13,18 @@ class LibraryBook(models.Model):
         last_number = last and last.registry_number or 0
         return last_number + 1
 
-    name = fields.Char(required=True)
+    name = fields.Char(
+        string="Title",
+        required=True,
+    )
     author_id = fields.Many2one(
         comodel_name="library.author",
         required=True,
+        ondelete="restrict",
     )
     editorial_id = fields.Many2one(
         comodel_name="library.editorial",
+        ondelete="restrict",
     )
     collection = fields.Char()
     city = fields.Char()
@@ -29,7 +34,8 @@ class LibraryBook(models.Model):
         string="Pages",
     )
     genre_id = fields.Many2one(
-        comodel_name="library.genre"
+        comodel_name="library.genre",
+        ondelete="restrict",
     )
     registry_number = fields.Integer(
         default=_get_registry_number,

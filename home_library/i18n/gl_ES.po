@@ -223,6 +223,11 @@ msgid "Registry Number"
 msgstr "Número de Rexistro"
 
 #. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__name
+msgid "Title"
+msgstr "Título"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__year
 msgid "Year"
 msgstr "Ano"

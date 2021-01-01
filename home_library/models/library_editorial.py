@@ -7,6 +7,7 @@ from odoo.exceptions import ValidationError
 class LibraryEditorial(models.Model):
     _name = "library.editorial"
     _description = "Library Editorial"
+    _order = "name"
 
     name = fields.Char(required=True)
     active = fields.Boolean(default=True)
