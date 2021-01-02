@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+cd_library_disk_user,cd.library.book user,model_cd_library_disk,group_cd_library_user,1,0,0,0
+cd_library_disk_manager,cd.library.book manager,model_cd_library_disk,group_cd_library_manager,1,1,1,1
+cd_library_author_user,cd.library.author user,model_cd_library_author,group_cd_library_user,1,0,0,0
+cd_library_author_manager,cd.library.author manager,model_cd_library_author,group_cd_library_manager,1,1,1,1
+cd_library_genre_user,cd.library.genre user,model_cd_library_genre,group_cd_library_user,1,0,0,0
+cd_library_genre_manager,cd.library.genre manager,model_cd_library_genre,group_cd_library_manager,1,1,1,1
+cd_library_editorial_user,cd.library.editorial user,model_cd_library_editorial,group_cd_library_user,1,0,0,0
+cd_library_editorial_manager,cd.library.editorial manager,model_cd_library_editorial,group_cd_library_manager,1,1,1,1

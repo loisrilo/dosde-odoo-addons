@@ -1,0 +1,236 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* cd_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-02 19:15+0000\n"
+"PO-Revision-Date: 2021-01-02 19:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__active
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__author_id
+#: model_terms:ir.ui.view,arch_db:cd_library.library_disk_view_search
+msgid "Author"
+msgstr "Autor"
+
+#. module: cd_library
+#: model:ir.actions.act_window,name:cd_library.library_author_action
+#: model:ir.ui.menu,name:cd_library.menu_library_author
+msgid "Authors"
+msgstr "Autores"
+
+#. module: cd_library
+#: model:ir.module.category,name:cd_library.module_category_cd_library
+#: model:ir.ui.menu,name:cd_library.parent_menu_cd_library
+msgid "CD Library"
+msgstr "Discoteca"
+
+#. module: cd_library
+#: model:ir.model,name:cd_library.model_cd_library_author
+msgid "CD Library Author"
+msgstr "Discoteca Autor"
+
+#. module: cd_library
+#: model:ir.model,name:cd_library.model_cd_library_disk
+msgid "CD Library Disk"
+msgstr "Discoteca Disco"
+
+#. module: cd_library
+#: model:ir.model,name:cd_library.model_cd_library_editorial
+msgid "CD Library Editorial"
+msgstr "Discográfica"
+
+#. module: cd_library
+#: model:ir.model,name:cd_library.model_cd_library_genre
+msgid "CD Library Genre"
+msgstr "Xénero"
+
+#. module: cd_library
+#: model:res.groups,name:cd_library.group_cd_library_manager
+msgid "CD Library Manager"
+msgstr "Administrador de Discoteca"
+
+#. module: cd_library
+#: model:res.groups,name:cd_library.group_cd_library_user
+msgid "CD Library User"
+msgstr "Usuario de Discoteca"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__city
+msgid "City"
+msgstr "Cidade"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__collection
+msgid "Collection"
+msgstr "Colección"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__create_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__create_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__create_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__create_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__create_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__create_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__create_date
+msgid "Created on"
+msgstr "Creado o"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__description
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__description
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__description
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__description
+msgid "Description"
+msgstr "Descrición"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__disk_ids
+msgid "Disk"
+msgstr "Disco"
+
+#. module: cd_library
+#: model_terms:ir.ui.view,arch_db:cd_library.library_disk_view_form
+msgid "Disk Title..."
+msgstr "Título do Disco..."
+
+#. module: cd_library
+#: model:ir.ui.menu,name:cd_library.menu_library_disk
+#: model_terms:ir.ui.view,arch_db:cd_library.library_author_view_form
+msgid "Disks"
+msgstr "Discos"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__display_name
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__display_name
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__display_name
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__display_name
+msgid "Display Name"
+msgstr "Nome para mostrar"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__edition
+msgid "Edition"
+msgstr "Edición"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__editorial_id
+msgid "Editorial"
+msgstr "Discográfica"
+
+#. module: cd_library
+#: model:ir.actions.act_window,name:cd_library.library_editorial_action
+#: model:ir.ui.menu,name:cd_library.menu_library_editorial
+msgid "Editorials"
+msgstr "Discográficas"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__genre_id
+msgid "Genre"
+msgstr "Xénero"
+
+#. module: cd_library
+#: model:ir.actions.act_window,name:cd_library.library_genre_action
+#: model:ir.ui.menu,name:cd_library.menu_library_genre
+msgid "Genres"
+msgstr "Xéneros"
+
+#. module: cd_library
+#: model_terms:ir.ui.view,arch_db:cd_library.library_disk_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__id
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__id
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__id
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__id
+msgid "ID"
+msgstr "ID"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author____last_update
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk____last_update
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial____last_update
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre____last_update
+msgid "Last Modified on"
+msgstr "Modificado por última vez o"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__write_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__write_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__write_uid
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por última vez por"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__write_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__write_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__write_date
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__write_date
+msgid "Last Updated on"
+msgstr "Actualizado or última vez o"
+
+#. module: cd_library
+#: model:ir.ui.menu,name:cd_library.menu_home_library_data
+msgid "Library"
+msgstr "Librería"
+
+#. module: cd_library
+#: model:ir.actions.act_window,name:cd_library.library_disk_action
+msgid "Library Disk"
+msgstr "Disco"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_author__name
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_editorial__name
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: cd_library
+#: model_terms:ir.ui.view,arch_db:cd_library.library_author_view_form
+#: model_terms:ir.ui.view,arch_db:cd_library.library_editorial_view_form
+#: model_terms:ir.ui.view,arch_db:cd_library.library_genre_view_form
+msgid "Name..."
+msgstr "Nome..."
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__registry_number
+msgid "Registry Number"
+msgstr "Número de rexistro"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__song_total
+msgid "Songs"
+msgstr "Cancións"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__name
+msgid "Title"
+msgstr "Título"
+
+#. module: cd_library
+#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__year
+msgid "Year"
+msgstr "Ano"
