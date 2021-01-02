@@ -25,13 +25,13 @@ msgstr "Activo"
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__author_id
 #: model_terms:ir.ui.view,arch_db:cd_library.library_disk_view_search
 msgid "Author"
-msgstr "Autor"
+msgstr "Intérprete"
 
 #. module: cd_library
 #: model:ir.actions.act_window,name:cd_library.library_author_action
 #: model:ir.ui.menu,name:cd_library.menu_library_author
 msgid "Authors"
-msgstr "Autores"
+msgstr "Intérpretes"
 
 #. module: cd_library
 #: model:ir.module.category,name:cd_library.module_category_cd_library
@@ -73,11 +73,6 @@ msgstr "Usuario de Discoteca"
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__city
 msgid "City"
 msgstr "Cidade"
-
-#. module: cd_library
-#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__collection
-msgid "Collection"
-msgstr "Colección"
 
 #. module: cd_library
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_author__create_uid
@@ -126,11 +121,6 @@ msgstr "Discos"
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_genre__display_name
 msgid "Display Name"
 msgstr "Nome para mostrar"
-
-#. module: cd_library
-#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__edition
-msgid "Edition"
-msgstr "Edición"
 
 #. module: cd_library
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__editorial_id
@@ -218,12 +208,7 @@ msgstr "Nome..."
 #. module: cd_library
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__registry_number
 msgid "Registry Number"
-msgstr "Número de rexistro"
-
-#. module: cd_library
-#: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__song_total
-msgid "Songs"
-msgstr "Cancións"
+msgstr "Rexistro"
 
 #. module: cd_library
 #: model:ir.model.fields,field_description:cd_library.field_cd_library_disk__name

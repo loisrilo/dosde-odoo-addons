@@ -26,13 +26,8 @@ class Librarydisk(models.Model):
         comodel_name="cd.library.editorial",
         ondelete="restrict",
     )
-    collection = fields.Char()
     city = fields.Char()
     year = fields.Integer()
-    edition = fields.Char()
-    song_total = fields.Integer(
-        string="Songs",
-    )
     genre_id = fields.Many2one(
         comodel_name="cd.library.genre",
         ondelete="restrict",
