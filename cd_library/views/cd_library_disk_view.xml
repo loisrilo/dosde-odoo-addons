@@ -10,11 +10,8 @@
                 <field name="author_id"/>
                 <field name="name"/>
                 <field name="editorial_id"/>
-                <field name="collection"/>
                 <field name="city"/>
                 <field name="year"/>
-                <field name="edition"/>
-                <field name="song_total"/>
                 <field name="genre_id"/>
                 <field name="registry_number"/>
             </tree>
@@ -37,13 +34,10 @@
                             <field name="author_id"/>
                             <field name="genre_id"/>
                             <field name="editorial_id"/>
-                            <field name="collection"/>
-                            <field name="edition"/>
                         </group>
                         <group>
                             <field name="city"/>
                             <field name="year"/>
-                            <field name="song_total"/>
                             <field name="registry_number"/>
                         </group>
                     </group>
@@ -63,10 +57,8 @@
                 <field name="name"/>
                 <field name="author_id"/>
                 <field name="editorial_id"/>
-                <field name="collection"/>
                 <field name="city"/>
                 <field name="year"/>
-                <field name="edition"/>
                 <field name="genre_id"/>
                 <field name="registry_number"/>
                 <group expand="0" string="Group By">
