@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="library_disk_view_tree" model="ir.ui.view">
+        <field name="name">cd.library.disk.tree</field>
+        <field name="model">cd.library.disk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="author_id"/>
+                <field name="name"/>
+                <field name="editorial_id"/>
+                <field name="collection"/>
+                <field name="city"/>
+                <field name="year"/>
+                <field name="edition"/>
+                <field name="song_total"/>
+                <field name="genre_id"/>
+                <field name="registry_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="library_disk_view_form" model="ir.ui.view">
+        <field name="name">cd.library.disk.form</field>
+        <field name="model">cd.library.disk</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Disk Title..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="author_id"/>
+                            <field name="genre_id"/>
+                            <field name="editorial_id"/>
+                            <field name="collection"/>
+                            <field name="edition"/>
+                        </group>
+                        <group>
+                            <field name="city"/>
+                            <field name="year"/>
+                            <field name="song_total"/>
+                            <field name="registry_number"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="library_disk_view_search" model="ir.ui.view">
+        <field name="name">cd.library.disk.search</field>
+        <field name="model">cd.library.disk</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="author_id"/>
+                <field name="editorial_id"/>
+                <field name="collection"/>
+                <field name="city"/>
+                <field name="year"/>
+                <field name="edition"/>
+                <field name="genre_id"/>
+                <field name="registry_number"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_author" string="Author" domain="[]" context="{'group_by':'author_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_disk_action">
+        <field name="name">Library Disk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">cd.library.disk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="parent_menu_cd_library"
+        name="CD Library"
+        web_icon="cd_library,static/description/icon.png"
+        groups="group_cd_library_user"
+    />
+    
+    <menuitem id="menu_library_disk"
+        name="Disks"
+        parent="parent_menu_cd_library"
+        action="library_disk_action"
+        sequence="10"
+    />
+
+    <menuitem id="menu_home_library_data"
+        name="Library"
+        parent="parent_menu_cd_library"
+        sequence="50"
+    />
+
+</odoo>
