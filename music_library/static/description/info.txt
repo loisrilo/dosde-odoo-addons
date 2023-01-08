@@ -1,0 +1,6 @@
+Icon generated using https://spilymp.github.io/ibo/.
+
+size: 256
+font: 140
+icon: fa-music
+rgb: 4,92,159

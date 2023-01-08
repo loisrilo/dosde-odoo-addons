@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="music_genre_view_tree" model="ir.ui.view">
+        <field name="name">music.genre.tree</field>
+        <field name="model">music.genre</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+     <record id="music_genre_view_form" model="ir.ui.view">
+        <field name="name">music.genre.form</field>
+        <field name="model">music.genre</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name..."/>
+                        </h1>
+                    </div>
+                    <group/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="music_genre_view_search" model="ir.ui.view">
+        <field name="name">music.genre.search</field>
+        <field name="model">music.genre</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="music_genre_action">
+        <field name="name">Genres</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.genre</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_music_genre"
+        name="Genres"
+        parent="menu_music_library_data"
+        action="music_genre_action"
+        sequence="30"
+    />
+
+</odoo>
