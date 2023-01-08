@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+music_album_user,music.album user,model_music_album,group_music_library_user,1,0,0,0
+music_album_manager,music.album manager,model_music_album,group_music_library_manager,1,1,1,1
+music_artist_user,music.artist user,model_music_artist,group_music_library_user,1,0,0,0
+music_artist_manager,music.artist manager,model_music_artist,group_music_library_manager,1,1,1,1
+music_genre_user,music.genre user,model_music_genre,group_music_library_user,1,0,0,0
+music_genre_manager,music.genre manager,model_music_genre,group_music_library_manager,1,1,1,1
+music_track_user,music.track user,model_music_track,group_music_library_user,1,0,0,0
+music_track_manager,music.track manager,model_music_track,group_music_library_manager,1,1,1,1

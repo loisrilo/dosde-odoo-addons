@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="music_track_view_tree" model="ir.ui.view">
+        <field name="name">music.track.tree</field>
+        <field name="model">music.track</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="artist_id"/>
+                <field name="album_id"/>
+                <field name="genre_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="music_track_view_form" model="ir.ui.view">
+        <field name="name">music.track.form</field>
+        <field name="model">music.track</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Title..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="artist_id"/>
+                            <field name="album_id"/>
+                            <field name="genre_id"/>
+                        </group>
+                        <group>
+                            <field name="file" filename="filename" />
+                            <field
+                                name="filename"
+                                attrs="{'invisible': [('file', '!=', False)]}"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="music_track_view_search" model="ir.ui.view">
+        <field name="name">music.track.search</field>
+        <field name="model">music.track</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="artist_id"/>
+                <field name="album_id"/>
+                <field name="genre_id"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_artist" string="Artist" domain="[]" context="{'group_by':'artist_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="music_track_action">
+        <field name="name">Tracks</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">music.track</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="parent_menu_music_library"
+        name="Music Library"
+        web_icon="music_library,static/description/icon.png"
+        groups="group_music_library_user"
+    />
+
+    <menuitem id="menu_music_track"
+        name="Tracks"
+        parent="parent_menu_music_library"
+        action="music_track_action"
+        sequence="10"
+    />
+
+    <menuitem id="menu_music_library_data"
+        name="Music"
+        parent="parent_menu_music_library"
+        sequence="50"
+    />
+
+</odoo>
