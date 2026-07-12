@@ -2,14 +2,13 @@
 
 from datetime import date
 
-from odoo import api, fields, models, _
-from odoo.exceptions import ValidationError
+from odoo import api, fields, models
 
 
 class HouseTaskTurn(models.Model):
     _name = "house.task.turn"
     _description = "Task Turn"
-    _inherit = 'mail.thread'
+    _inherit = "mail.thread"
     _order = "id desc"
 
     name = fields.Char(default="/")
@@ -26,10 +25,8 @@ class HouseTaskTurn(models.Model):
         tracking=True,
     )
     state = fields.Selection(
-        selection=[('pending', 'Pending'),
-                   ('done', 'Done'),
-                   ('cancel', 'Cancel')],
-        default='pending',
+        selection=[("pending", "Pending"), ("done", "Done"), ("cancel", "Cancel")],
+        default="pending",
         tracking=True,
     )
     date_due = fields.Date(
@@ -41,31 +38,35 @@ class HouseTaskTurn(models.Model):
         string="Done Date",
     )
     notes = fields.Text()
-    late = fields.Boolean(compute='_compute_late') # TODO: review late
+    late = fields.Boolean(compute="_compute_late")  # TODO: review late
 
     def _compute_late(self):
         for rec in self.filtered(lambda r: not r.date_done):
             rec.late = fields.Date.from_string(rec.date_due) < date.today()
         for rec in self.filtered(lambda r: r.date_done):
-            rec.late = fields.Date.from_string(rec.date_due) < fields.Date.from_string(rec.date_done)
+            rec.late = fields.Date.from_string(rec.date_due) < fields.Date.from_string(
+                rec.date_done
+            )
 
     @api.model
     def create(self, vals):
-        if 'name' not in vals or vals['name'] == '/':
-            task_id = vals.get('house_task_id')
+        if "name" not in vals or vals["name"] == "/":
+            task_id = vals.get("house_task_id")
             sequence = False
             if task_id:
-                task = self.env['house.task'].browse(task_id)
+                task = self.env["house.task"].browse(task_id)
                 sequence = task.sequence_id
             if sequence:
-                vals['name'] = sequence.next_by_id()
+                vals["name"] = sequence.next_by_id()
         return super().create(vals)
 
     def action_done(self):
-        self.write({
-            'state': 'done',
-            'date_done': fields.Date.today(),
-        })
+        self.write(
+            {
+                "state": "done",
+                "date_done": fields.Date.today(),
+            }
+        )
 
     def action_cancel(self):
-        self.write({'state': 'cancel'})
+        self.write({"state": "cancel"})

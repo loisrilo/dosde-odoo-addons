@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="house_task_turn_view_tree" model="ir.ui.view">
         <field name="name">house.task.turn.tree</field>
         <field name="model">house.task.turn</field>
         <field name="arch" type="xml">
             <tree decoration-danger="late">
-                <field name="name"/>
-                <field name="user_id"/>
-                <field name="date_due"/>
-                <field name="date_done"/>
-                <field name="late" invisible="1"/>
-                <field name="state"/>
+                <field name="name" />
+                <field name="user_id" />
+                <field name="date_due" />
+                <field name="date_done" />
+                <field name="late" invisible="1" />
+                <field name="state" />
             </tree>
         </field>
     </record>
@@ -23,23 +21,39 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_done" type="object" string="Done" states="pending" class="btn-primary"/>
-                    <button name="action_cancel" type="object" string="Cancel" states="pending" groups="housekeeping.group_housekeeping_manager"/>
-                    <field name="state" widget="statusbar" statusbar_visible="pending,done"/>
+                    <button
+                        name="action_done"
+                        type="object"
+                        string="Done"
+                        states="pending"
+                        class="btn-primary"
+                    />
+                    <button
+                        name="action_cancel"
+                        type="object"
+                        string="Cancel"
+                        states="pending"
+                        groups="housekeeping.group_housekeeping_manager"
+                    />
+                    <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="pending,done"
+                    />
                 </header>
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
-                        <field name="house_task_id"/>
-                        <field name="user_id"/>
+                        <field name="house_task_id" />
+                        <field name="user_id" />
                     </group>
                     <group>
-                        <field name="date_due"/>
-                        <field name="date_done"/>
+                        <field name="date_due" />
+                        <field name="date_done" />
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -55,8 +69,8 @@
         <field name="model">house.task.turn</field>
         <field name="arch" type="xml">
             <calendar date_start="date_done" color="user_id" mode="month">
-                <field name="user_id"/>
-                <field name="house_task_id"/>
+                <field name="user_id" />
+                <field name="house_task_id" />
             </calendar>
         </field>
     </record>
@@ -66,8 +80,8 @@
         <field name="model">house.task.turn</field>
         <field name="arch" type="xml">
             <pivot>
-                <field name="user_id" type="row"/>
-                <field name="house_task_id" type="col"/>
+                <field name="user_id" type="row" />
+                <field name="house_task_id" type="col" />
             </pivot>
         </field>
     </record>
@@ -79,16 +93,17 @@
         <field name="view_mode">tree,form,pivot,calendar</field>
     </record>
 
-    <menuitem id="parent_menu_housekeeping"
+    <menuitem
+        id="parent_menu_housekeeping"
         name="Housekeeping"
         web_icon="housekeeping,static/description/icon.png"
         groups="group_housekeeping_user"
     />
 
-    <menuitem id="parent_menu_house_task_turn"
+    <menuitem
+        id="parent_menu_house_task_turn"
         name="Task Turns"
         parent="parent_menu_housekeeping"
         action="house_task_turn_action"
     />
-
 </odoo>

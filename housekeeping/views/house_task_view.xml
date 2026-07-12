@@ -1,14 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="house_task_view_tree" model="ir.ui.view">
         <field name="name">house.task.tree</field>
         <field name="model">house.task</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="active"/>
+                <field name="name" />
+                <field name="active" />
             </tree>
         </field>
     </record>
@@ -19,30 +17,44 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="generate" type="object" string="Auto-Generate" class="btn-primary"/>
+                    <button
+                        name="generate"
+                        type="object"
+                        string="Auto-Generate"
+                        class="btn-primary"
+                    />
                 </header>
                 <sheet>
-                    <widget name="web_ribbon" text="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget
+                        name="web_ribbon"
+                        text="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
                     <field name="active" invisible="1" />
-                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_button_box" name="button_box" />
                     <div class="oe_title">
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                     <group>
-                        <field name="description"/>
-                        <field name="user_ids" widget="many2many_tags"/>
-                        <label for="code_prefix"/>
+                        <field name="description" />
+                        <field name="user_ids" widget="many2many_tags" />
+                        <label for="code_prefix" />
                         <div>
-                            <field name="code_prefix" style="padding-right: 1.0em" class="oe_inline"/>
-                            <field name="sequence_id" groups="base.group_no_one"/>
+                            <field
+                                name="code_prefix"
+                                style="padding-right: 1.0em"
+                                class="oe_inline"
+                            />
+                            <field name="sequence_id" groups="base.group_no_one" />
                         </div>
                     </group>
                     <group>
-                        <field name="period_min"/>
-                        <field name="period_max"/>
-                        <field name="python_code"/>
+                        <field name="period_min" />
+                        <field name="period_max" />
+                        <field name="python_code" />
                     </group>
                 </sheet>
             </form>
@@ -56,10 +68,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parent_menu_house_task"
+    <menuitem
+        id="parent_menu_house_task"
         name="Tasks Configuration"
         parent="parent_menu_housekeeping"
         action="house_task_action"
     />
-
 </odoo>

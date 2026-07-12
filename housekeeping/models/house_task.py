@@ -1,10 +1,10 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from datetime import timedelta, date
+from datetime import date, timedelta
 
-from odoo import api, fields, models, _
-from odoo.tools.safe_eval import safe_eval
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
+from odoo.tools.safe_eval import safe_eval
 
 
 class HouseTask(models.Model):
@@ -40,22 +40,24 @@ class HouseTask(models.Model):
         help="The number of days until next turn is considered late.",
     )
     python_code = fields.Text(
-        string='Python Code', groups='base.group_system',
+        string="Python Code",
+        groups="base.group_system",
         default=DEFAULT_PYTHON_CODE,
-        help="Write Python code that will recide the next user assigned to"
-             "the task.",
+        help="Write Python code that will recide the next user assigned to" "the task.",
     )
     code_prefix = fields.Char(
         string="Prefix for Task Turns",
     )
     sequence_id = fields.Many2one(
-        comodel_name="ir.sequence", string="Task Sequence",
+        comodel_name="ir.sequence",
+        string="Task Sequence",
         help="This field contains the information related to the numbering "
-             "of the turns of this task.",
-        copy=False, readonly=True,
+        "of the turns of this task.",
+        copy=False,
+        readonly=True,
     )
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Name must be unique"),
+        ("name_uniq", "unique (name)", "Name must be unique"),
     ]
 
     @api.model
@@ -94,39 +96,44 @@ class HouseTask(models.Model):
         return super().create(vals)
 
     def _evaluate_python_code(self):
-        eval_ctx = {'rec': self, 'env': self.env}
+        eval_ctx = {"rec": self, "env": self.env}
         try:
-            safe_eval(
-                self.python_code, mode="exec",
-                nocopy=True, globals_dict=eval_ctx)
+            safe_eval(self.python_code, mode="exec", nocopy=True, globals_dict=eval_ctx)
         except Exception as error:
-            raise UserError(_(
-                "Error evaluating python code.\n %s") % error)
-        return eval_ctx.get('next')
+            raise UserError(_("Error evaluating python code.\n %s") % error)
+        return eval_ctx.get("next")
 
     def generate(self):
-        turn_model = self.env['house.task.turn']
+        turn_model = self.env["house.task.turn"]
         for rec in self:
-            pending = turn_model.search([
-                ('house_task_id', '=', rec.id),
-                ('state', '=', 'pending')])
+            pending = turn_model.search(
+                [("house_task_id", "=", rec.id), ("state", "=", "pending")]
+            )
             if pending:
                 continue
 
-            last = turn_model.search([
-                ('house_task_id', '=', rec.id),
-                ('state', '=', 'done')], order='date_done desc', limit=1)
-            if last and fields.Date.from_string(last.date_done) + timedelta(
-                    days=rec.period_min) > date.today():
+            last = turn_model.search(
+                [("house_task_id", "=", rec.id), ("state", "=", "done")],
+                order="date_done desc",
+                limit=1,
+            )
+            if (
+                last
+                and fields.Date.from_string(last.date_done)
+                + timedelta(days=rec.period_min)
+                > date.today()
+            ):
                 continue
 
             assigned_to = rec._evaluate_python_code()
             if not assigned_to:
                 continue
 
-            turn_model.create({
-                'house_task_id': rec.id,
-                'date_due': fields.Date.from_string(last.date_done) +
-                timedelta(days=rec.period_max),
-                'user_id': assigned_to.id,
-            })
+            turn_model.create(
+                {
+                    "house_task_id": rec.id,
+                    "date_due": fields.Date.from_string(last.date_done)
+                    + timedelta(days=rec.period_max),
+                    "user_id": assigned_to.id,
+                }
+            )
