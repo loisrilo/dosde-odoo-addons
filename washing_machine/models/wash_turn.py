@@ -1,6 +1,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -8,7 +8,7 @@ class WashTurn(models.Model):
     _name = "wash.turn"
     _description = "Wash Turn"
     _order = "date desc"
-    _rec_name = 'date'
+    _rec_name = "date"
 
     user_id = fields.Many2one(
         comodel_name="res.users",
@@ -18,18 +18,17 @@ class WashTurn(models.Model):
     )
     date = fields.Date(required=True)
     notes = fields.Html()
-    past = fields.Boolean(compute='_compute_past')
+    past = fields.Boolean(compute="_compute_past")
 
     _sql_constraints = [
-        ('date_uniq', 'unique (date)', "Date unavailable"),
+        ("date_uniq", "unique (date)", "Date unavailable"),
     ]
 
     @api.constrains("date")
     def _check_date(self):
         for rec in self:
             if rec.date < fields.Date.today():
-                raise ValidationError(_(
-                    "You cannot travel to the past, do you?"))
+                raise ValidationError(_("You cannot travel to the past, do you?"))
 
     def _compute_past(self):
         today = fields.Date.today()
@@ -38,10 +37,10 @@ class WashTurn(models.Model):
 
     def write(self, vals):
         user = self.env.user
-        if (not user.has_group('washing_machine.group_washing_machine_manager')
-                and (self.mapped('user_id') != user or
-                     any(self.mapped('past')))):
-            raise ValidationError(_(
-                "You are not allowed to write other user's turns or "
-                "past turns."))
+        if not user.has_group("washing_machine.group_washing_machine_manager") and (
+            self.mapped("user_id") != user or any(self.mapped("past"))
+        ):
+            raise ValidationError(
+                _("You are not allowed to write other user's turns or " "past turns.")
+            )
         return super().write(vals)

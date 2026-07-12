@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="wash_turn_view_tree" model="ir.ui.view">
         <field name="name">wash.turn.tree</field>
         <field name="model">wash.turn</field>
         <field name="arch" type="xml">
             <tree decoration-muted="past">
-                <field name="user_id"/>
-                <field name="date"/>
-                <field name="past" invisible="1"/>
+                <field name="user_id" />
+                <field name="date" />
+                <field name="past" invisible="1" />
             </tree>
         </field>
     </record>
@@ -21,9 +19,9 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="user_id"/>
-                        <field name="date"/>
-                        <field name="notes"/>
+                        <field name="user_id" />
+                        <field name="date" />
+                        <field name="notes" />
                     </group>
                 </sheet>
             </form>
@@ -35,7 +33,7 @@
         <field name="model">wash.turn</field>
         <field name="arch" type="xml">
             <calendar date_start="date" color="user_id" mode="month">
-                <field name="user_id"/>
+                <field name="user_id" />
             </calendar>
         </field>
     </record>
@@ -45,8 +43,8 @@
         <field name="model">wash.turn</field>
         <field name="arch" type="xml">
             <pivot>
-                <field name="user_id" type="row"/>
-                <field name="date" interval="month" type="col"/>
+                <field name="user_id" type="row" />
+                <field name="date" interval="month" type="col" />
             </pivot>
         </field>
     </record>
@@ -58,11 +56,11 @@
         <field name="view_mode">tree,form,calendar,pivot</field>
     </record>
 
-    <menuitem id="parent_menu_washing_machine"
+    <menuitem
+        id="parent_menu_washing_machine"
         name="Washing Machine"
         web_icon="washing_machine,static/description/icon.png"
         groups="group_washing_machine_user"
         action="wash_turn_action"
     />
-
 </odoo>
