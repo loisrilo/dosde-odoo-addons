@@ -2,7 +2,7 @@
 {
     "name": "Washing Machine",
     "summary": "No more flatmates fights",
-    "version": "15.0.1.0.0",
+    "version": "18.0.1.0.0",
     "category": "Uncategorized",
     "website": "https://github.com/loisrilo/dosde-odoo-addons",
     "author": "Lois Rilo",
