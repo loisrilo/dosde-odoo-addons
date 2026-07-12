@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="house_task_turn_view_tree" model="ir.ui.view">
-        <field name="name">house.task.turn.tree</field>
+        <field name="name">house.task.turn.list</field>
         <field name="model">house.task.turn</field>
         <field name="arch" type="xml">
-            <tree decoration-danger="late">
+            <list decoration-danger="late">
                 <field name="name" />
                 <field name="user_id" />
                 <field name="date_due" />
                 <field name="date_done" />
                 <field name="late" invisible="1" />
                 <field name="state" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -25,14 +25,14 @@
                         name="action_done"
                         type="object"
                         string="Done"
-                        states="pending"
+                        invisible="state != 'pending'"
                         class="btn-primary"
                     />
                     <button
                         name="action_cancel"
                         type="object"
                         string="Cancel"
-                        states="pending"
+                        invisible="state != 'pending'"
                         groups="housekeeping.group_housekeeping_manager"
                     />
                     <field
@@ -90,7 +90,7 @@
         <field name="name">Housekeeping Task Turn</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">house.task.turn</field>
-        <field name="view_mode">tree,form,pivot,calendar</field>
+        <field name="view_mode">list,form,pivot,calendar</field>
     </record>
 
     <menuitem

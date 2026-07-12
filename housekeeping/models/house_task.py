@@ -13,11 +13,14 @@ class HouseTask(models.Model):
 
     DEFAULT_PYTHON_CODE = """# Available variables:
     #  - env: Odoo Environment on which the action is triggered
-    #  - model: Odoo Model of the record on which the action is triggered; is a void recordset
+    #  - model: Odoo Model of the record on which the action is triggered;
+    #    is a void recordset
     #  - record: record on which the action is triggered; may be be void
-    #  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+    #  - records: recordset of all records on which the action is triggered
+    #    in multi-mode; may be void
     #  - time, datetime, dateutil, timezone: useful Python libraries
-    #  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+    #  - log: log(message, level='info'): logging function to record debug
+    #    information in ir.logging table
     #  - Warning: Warning Exception to use with raise
     # To return the next assigned user, assign: next = res.user record.\n\n\n\n"""
 
@@ -40,7 +43,6 @@ class HouseTask(models.Model):
         help="The number of days until next turn is considered late.",
     )
     python_code = fields.Text(
-        string="Python Code",
         groups="base.group_system",
         default=DEFAULT_PYTHON_CODE,
         help="Write Python code that will recide the next user assigned to" "the task.",
@@ -86,21 +88,22 @@ class HouseTask(models.Model):
                     rec.sequence_id = self.env["ir.sequence"].create(seq_vals)
         return super().write(vals)
 
-    @api.model
-    def create(self, vals):
-        prefix = vals.get("code_prefix")
-        if prefix:
-            seq_vals = self._prepare_ir_sequence(prefix)
-            sequence = self.env["ir.sequence"].create(seq_vals)
-            vals["sequence_id"] = sequence.id
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            prefix = vals.get("code_prefix")
+            if prefix:
+                seq_vals = self._prepare_ir_sequence(prefix)
+                sequence = self.env["ir.sequence"].create(seq_vals)
+                vals["sequence_id"] = sequence.id
+        return super().create(vals_list)
 
     def _evaluate_python_code(self):
         eval_ctx = {"rec": self, "env": self.env}
         try:
             safe_eval(self.python_code, mode="exec", nocopy=True, globals_dict=eval_ctx)
         except Exception as error:
-            raise UserError(_("Error evaluating python code.\n %s") % error)
+            raise UserError(_("Error evaluating python code.\n %s") % error) from error
         return eval_ctx.get("next")
 
     def generate(self):

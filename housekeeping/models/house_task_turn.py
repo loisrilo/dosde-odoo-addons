@@ -48,17 +48,18 @@ class HouseTaskTurn(models.Model):
                 rec.date_done
             )
 
-    @api.model
-    def create(self, vals):
-        if "name" not in vals or vals["name"] == "/":
-            task_id = vals.get("house_task_id")
-            sequence = False
-            if task_id:
-                task = self.env["house.task"].browse(task_id)
-                sequence = task.sequence_id
-            if sequence:
-                vals["name"] = sequence.next_by_id()
-        return super().create(vals)
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if "name" not in vals or vals["name"] == "/":
+                task_id = vals.get("house_task_id")
+                sequence = False
+                if task_id:
+                    task = self.env["house.task"].browse(task_id)
+                    sequence = task.sequence_id
+                if sequence:
+                    vals["name"] = sequence.next_by_id()
+        return super().create(vals_list)
 
     def action_done(self):
         self.write(
