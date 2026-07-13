@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="money_pot_view_tree" model="ir.ui.view">
-        <field name="name">money.pot.tree</field>
+        <field name="name">money.pot.list</field>
         <field name="model">money.pot</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="state" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -21,14 +21,14 @@
                         name="action_open"
                         type="object"
                         string="Re-Open"
-                        states="closed"
+                        invisible="state != 'closed'"
                         groups="money_pot.group_money_pot_manager"
                     />
                     <button
                         name="action_close"
                         type="object"
                         string="Close"
-                        states="open"
+                        invisible="state != 'open'"
                         groups="money_pot.group_money_pot_manager"
                     />
                     <field name="state" widget="statusbar" />
@@ -56,7 +56,7 @@
         <field name="name">Money Pot</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">money.pot</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
