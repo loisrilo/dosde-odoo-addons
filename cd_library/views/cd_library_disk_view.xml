@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="library_disk_view_tree" model="ir.ui.view">
         <field name="name">cd.library.disk.tree</field>
         <field name="model">cd.library.disk</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="author_id"/>
-                <field name="name"/>
-                <field name="editorial_id"/>
-                <field name="city"/>
-                <field name="year"/>
-                <field name="genre_id"/>
-                <field name="registry_number"/>
+                <field name="author_id" />
+                <field name="name" />
+                <field name="editorial_id" />
+                <field name="city" />
+                <field name="year" />
+                <field name="genre_id" />
+                <field name="registry_number" />
             </tree>
         </field>
     </record>
@@ -26,23 +24,23 @@
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Disk Title..."/>
+                            <field name="name" placeholder="Disk Title..." />
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="author_id"/>
-                            <field name="genre_id"/>
-                            <field name="editorial_id"/>
+                            <field name="author_id" />
+                            <field name="genre_id" />
+                            <field name="editorial_id" />
                         </group>
                         <group>
-                            <field name="city"/>
-                            <field name="year"/>
-                            <field name="registry_number"/>
+                            <field name="city" />
+                            <field name="year" />
+                            <field name="registry_number" />
                         </group>
                     </group>
                     <group>
-                        <field name="description"/>
+                        <field name="description" />
                     </group>
                 </sheet>
             </form>
@@ -54,15 +52,20 @@
         <field name="model">cd.library.disk</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
-                <field name="author_id"/>
-                <field name="editorial_id"/>
-                <field name="city"/>
-                <field name="year"/>
-                <field name="genre_id"/>
-                <field name="registry_number"/>
+                <field name="name" />
+                <field name="author_id" />
+                <field name="editorial_id" />
+                <field name="city" />
+                <field name="year" />
+                <field name="genre_id" />
+                <field name="registry_number" />
                 <group expand="0" string="Group By">
-                    <filter name="group_by_author" string="Author" domain="[]" context="{'group_by':'author_id'}"/>
+                    <filter
+                        name="group_by_author"
+                        string="Author"
+                        domain="[]"
+                        context="{'group_by':'author_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -75,23 +78,25 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parent_menu_cd_library"
+    <menuitem
+        id="parent_menu_cd_library"
         name="CD Library"
         web_icon="cd_library,static/description/icon.png"
         groups="group_cd_library_user"
     />
-    
-    <menuitem id="menu_library_disk"
+
+    <menuitem
+        id="menu_library_disk"
         name="Disks"
         parent="parent_menu_cd_library"
         action="library_disk_action"
         sequence="10"
     />
 
-    <menuitem id="menu_home_library_data"
+    <menuitem
+        id="menu_home_library_data"
         name="Library"
         parent="parent_menu_cd_library"
         sequence="50"
     />
-
 </odoo>

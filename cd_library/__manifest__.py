@@ -4,7 +4,7 @@
     "summary": "Manage a simple registry of music disks.",
     "version": "15.0.1.0.0",
     "category": "Uncategorized",
-    "website": "https://github.com/loisrilo/",
+    "website": "https://github.com/loisrilo/dosde-odoo-addons",
     "author": "Lois Rilo",
     "license": "AGPL-3",
     "installable": True,
