@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="money_item_view_tree" model="ir.ui.view">
         <field name="name">money.item.tree</field>
         <field name="model">money.item</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="pot_id"/>
-                <field name="user_id"/>
-                <field name="amount"/>
-                <field name="date"/>
+                <field name="pot_id" />
+                <field name="user_id" />
+                <field name="amount" />
+                <field name="date" />
             </tree>
         </field>
     </record>
 
-     <record id="money_item_view_form" model="ir.ui.view">
+    <record id="money_item_view_form" model="ir.ui.view">
         <field name="name">money.item.form</field>
         <field name="model">money.item</field>
         <field name="arch" type="xml">
@@ -23,14 +21,13 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="amount"/>
-                            <field name="description"/>
-                            <field name="date"/>
-
+                            <field name="amount" />
+                            <field name="description" />
+                            <field name="date" />
                         </group>
                         <group>
-                            <field name="user_id"/>
-                            <field name="pot_id"/>
+                            <field name="user_id" />
+                            <field name="pot_id" />
                         </group>
                     </group>
                 </sheet>
@@ -43,9 +40,9 @@
         <field name="model">money.item</field>
         <field name="arch" type="xml">
             <pivot>
-                <field name="user_id" type="row"/>
-                <field name="date" interval="month" type="col"/>
-                <field name="amount" type="measure"/>
+                <field name="user_id" type="row" />
+                <field name="date" interval="month" type="col" />
+                <field name="amount" type="measure" />
             </pivot>
         </field>
     </record>
@@ -55,10 +52,15 @@
         <field name="model">money.item</field>
         <field name="arch" type="xml">
             <search>
-                <field name="user_id"/>
-                <field name="pot_id"/>
+                <field name="user_id" />
+                <field name="pot_id" />
                 <group expand="0" string="Group By">
-                    <filter name="group_by_user" string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                    <filter
+                        name="group_by_user"
+                        string="User"
+                        domain="[]"
+                        context="{'group_by':'user_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -71,11 +73,11 @@
         <field name="view_mode">tree,form,pivot</field>
     </record>
 
-    <menuitem id="menu_money_item"
+    <menuitem
+        id="menu_money_item"
         name="Money Items"
         parent="parent_menu_money_pot"
         action="money_item_action"
         sequence="20"
     />
-
 </odoo>
