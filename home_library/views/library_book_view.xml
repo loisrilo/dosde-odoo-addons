@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="library_book_view_tree" model="ir.ui.view">
         <field name="name">library.book.tree</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="author_id"/>
-                <field name="name"/>
-                <field name="editorial_id"/>
-                <field name="collection"/>
-                <field name="city"/>
-                <field name="year"/>
-                <field name="edition"/>
-                <field name="page_total"/>
-                <field name="genre_id"/>
-                <field name="registry_number"/>
+                <field name="author_id" />
+                <field name="name" />
+                <field name="editorial_id" />
+                <field name="collection" />
+                <field name="city" />
+                <field name="year" />
+                <field name="edition" />
+                <field name="page_total" />
+                <field name="genre_id" />
+                <field name="registry_number" />
             </tree>
         </field>
     </record>
@@ -29,26 +27,26 @@
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Book Title..."/>
+                            <field name="name" placeholder="Book Title..." />
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="author_id"/>
-                            <field name="genre_id"/>
-                            <field name="editorial_id"/>
-                            <field name="collection"/>
-                            <field name="edition"/>
+                            <field name="author_id" />
+                            <field name="genre_id" />
+                            <field name="editorial_id" />
+                            <field name="collection" />
+                            <field name="edition" />
                         </group>
                         <group>
-                            <field name="city"/>
-                            <field name="year"/>
-                            <field name="page_total"/>
-                            <field name="registry_number"/>
+                            <field name="city" />
+                            <field name="year" />
+                            <field name="page_total" />
+                            <field name="registry_number" />
                         </group>
                     </group>
                     <group>
-                        <field name="description"/>
+                        <field name="description" />
                     </group>
                 </sheet>
             </form>
@@ -60,17 +58,22 @@
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
-                <field name="author_id"/>
-                <field name="editorial_id"/>
-                <field name="collection"/>
-                <field name="city"/>
-                <field name="year"/>
-                <field name="edition"/>
-                <field name="genre_id"/>
-                <field name="registry_number"/>
+                <field name="name" />
+                <field name="author_id" />
+                <field name="editorial_id" />
+                <field name="collection" />
+                <field name="city" />
+                <field name="year" />
+                <field name="edition" />
+                <field name="genre_id" />
+                <field name="registry_number" />
                 <group expand="0" string="Group By">
-                    <filter name="group_by_author" string="Author" domain="[]" context="{'group_by':'author_id'}"/>
+                    <filter
+                        name="group_by_author"
+                        string="Author"
+                        domain="[]"
+                        context="{'group_by':'author_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -83,23 +86,25 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parent_menu_home_library"
+    <menuitem
+        id="parent_menu_home_library"
         name="Home Library"
         web_icon="home_library,static/description/icon.png"
         groups="group_home_library_user"
     />
-    
-    <menuitem id="menu_library_book"
+
+    <menuitem
+        id="menu_library_book"
         name="Books"
         parent="parent_menu_home_library"
         action="library_book_action"
         sequence="10"
     />
 
-    <menuitem id="menu_home_library_data"
+    <menuitem
+        id="menu_home_library_data"
         name="Library"
         parent="parent_menu_home_library"
         sequence="50"
     />
-
 </odoo>

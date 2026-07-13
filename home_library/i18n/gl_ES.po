@@ -199,7 +199,6 @@ msgstr "Xénero literario"
 
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__name
-#: model:ir.model.fields,field_description:home_library.field_library_book__name
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__name
 #: model:ir.model.fields,field_description:home_library.field_library_genre__name
 msgid "Name"
