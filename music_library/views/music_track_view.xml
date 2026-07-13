@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="music_track_view_tree" model="ir.ui.view">
-        <field name="name">music.track.tree</field>
+        <field name="name">music.track.list</field>
         <field name="model">music.track</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
                 <field name="artist_id" />
                 <field name="album_id" />
                 <field name="genre_id" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -32,10 +32,7 @@
                         </group>
                         <group>
                             <field name="file" filename="filename" />
-                            <field
-                                name="filename"
-                                attrs="{'invisible': [('file', '!=', False)]}"
-                            />
+                            <field name="filename" invisible="file" />
                         </group>
                     </group>
                 </sheet>
@@ -68,7 +65,7 @@
         <field name="name">Tracks</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">music.track</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem

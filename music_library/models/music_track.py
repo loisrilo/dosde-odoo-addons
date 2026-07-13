@@ -38,13 +38,13 @@ class MusicTrack(models.Model):
         for rec in self:
             if not rec.name or not rec.artist_id:
                 continue
-            rec.filename = "%s - %s.mp3" % (rec.artist_id.name, rec.name)
+            rec.filename = f"{rec.artist_id.name} - {rec.name}.mp3"
 
     def action_music_zip_download(self):
         ids = ",".join(map(str, self.ids))
         return {
             "type": "ir.actions.act_url",
-            "url": "/web/music_track/download_zip?ids=%s" % (ids),
+            "url": f"/web/music_track/download_zip?ids={ids}",
             "target": "self",
         }
 
@@ -59,7 +59,9 @@ class MusicTrack(models.Model):
 
         with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
             for rec in self:
-                attachment = attachments.filtered(lambda a: a.res_id == rec.id)
+                attachment = attachments.filtered(
+                    lambda a, rec_id=rec.id: a.res_id == rec_id
+                )
                 zip_file.write(
                     attachment._full_path(attachment.store_fname), rec.filename
                 )

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="music_artist_view_tree" model="ir.ui.view">
-        <field name="name">music.artist.tree</field>
+        <field name="name">music.artist.list</field>
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -45,7 +45,7 @@
         <field name="name">Artists</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">music.artist</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
