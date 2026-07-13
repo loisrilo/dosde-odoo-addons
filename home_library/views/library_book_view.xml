@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="library_book_view_tree" model="ir.ui.view">
-        <field name="name">library.book.tree</field>
+        <field name="name">library.book.list</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="author_id" />
                 <field name="name" />
                 <field name="editorial_id" />
@@ -15,7 +15,7 @@
                 <field name="page_total" />
                 <field name="genre_id" />
                 <field name="registry_number" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -83,7 +83,7 @@
         <field name="name">Library Book</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">library.book</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem
