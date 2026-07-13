@@ -12,9 +12,11 @@ class MusicLibraryController(http.Controller):
             return
         list_ids = map(int, ids.split(","))
         out_file = request.env["music.track"].browse(list_ids)._create_temp_zip()
-        return http.send_file(
-            filepath_or_fp=out_file,
+        stream = http.Stream(
+            type="data",
+            data=out_file.getvalue(),
             mimetype="application/zip",
             as_attachment=True,
-            filename=_("music.zip"),
+            download_name=_("music.zip"),
         )
+        return stream.get_response()
