@@ -5,7 +5,6 @@ from odoo.http import request
 
 
 class MusicLibraryController(http.Controller):
-
     @http.route("/web/music_track/download_zip", type="http", auth="user")
     def download_zip(self, ids=None):
         ids = [] if not ids else ids

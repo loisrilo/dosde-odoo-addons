@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="music_track_view_tree" model="ir.ui.view">
         <field name="name">music.track.tree</field>
         <field name="model">music.track</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
-                <field name="artist_id"/>
-                <field name="album_id"/>
-                <field name="genre_id"/>
+                <field name="name" />
+                <field name="artist_id" />
+                <field name="album_id" />
+                <field name="genre_id" />
             </tree>
         </field>
     </record>
@@ -23,14 +21,14 @@
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Title..."/>
+                            <field name="name" placeholder="Title..." />
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="artist_id"/>
-                            <field name="album_id"/>
-                            <field name="genre_id"/>
+                            <field name="artist_id" />
+                            <field name="album_id" />
+                            <field name="genre_id" />
                         </group>
                         <group>
                             <field name="file" filename="filename" />
@@ -50,12 +48,17 @@
         <field name="model">music.track</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
-                <field name="artist_id"/>
-                <field name="album_id"/>
-                <field name="genre_id"/>
+                <field name="name" />
+                <field name="artist_id" />
+                <field name="album_id" />
+                <field name="genre_id" />
                 <group expand="0" string="Group By">
-                    <filter name="group_by_artist" string="Artist" domain="[]" context="{'group_by':'artist_id'}"/>
+                    <filter
+                        name="group_by_artist"
+                        string="Artist"
+                        domain="[]"
+                        context="{'group_by':'artist_id'}"
+                    />
                 </group>
             </search>
         </field>
@@ -68,20 +71,23 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="parent_menu_music_library"
+    <menuitem
+        id="parent_menu_music_library"
         name="Music Library"
         web_icon="music_library,static/description/icon.png"
         groups="group_music_library_user"
     />
 
-    <menuitem id="menu_music_track"
+    <menuitem
+        id="menu_music_track"
         name="Tracks"
         parent="parent_menu_music_library"
         action="music_track_action"
         sequence="10"
     />
 
-    <menuitem id="menu_music_library_data"
+    <menuitem
+        id="menu_music_library_data"
         name="Music"
         parent="parent_menu_music_library"
         sequence="50"
@@ -97,5 +103,4 @@
                 action = records.action_music_zip_download()
         </field>
     </record>
-
 </odoo>

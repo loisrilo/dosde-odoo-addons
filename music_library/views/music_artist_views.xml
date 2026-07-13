@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-
     <record id="music_artist_view_tree" model="ir.ui.view">
         <field name="name">music.artist.tree</field>
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="name" />
             </tree>
         </field>
     </record>
 
-     <record id="music_artist_view_form" model="ir.ui.view">
+    <record id="music_artist_view_form" model="ir.ui.view">
         <field name="name">music.artist.form</field>
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
@@ -20,12 +18,12 @@
                 <sheet>
                     <div class="oe_title">
                         <h1>
-                            <field name="name" placeholder="Name..."/>
+                            <field name="name" placeholder="Name..." />
                         </h1>
                     </div>
                     <notebook>
                         <page name="tracks" string="Tracks">
-                            <field name="track_ids"/>
+                            <field name="track_ids" />
                         </page>
                     </notebook>
                 </sheet>
@@ -38,7 +36,7 @@
         <field name="model">music.artist</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="name" />
             </search>
         </field>
     </record>
@@ -50,11 +48,11 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_music_artist"
+    <menuitem
+        id="menu_music_artist"
         name="Artists"
         parent="menu_music_library_data"
         action="music_artist_action"
         sequence="10"
     />
-
 </odoo>

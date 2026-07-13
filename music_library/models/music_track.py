@@ -1,9 +1,9 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models, _
-
 import zipfile
 from io import BytesIO
+
+from odoo import api, fields, models
 
 
 class MusicTrack(models.Model):
@@ -30,8 +30,8 @@ class MusicTrack(models.Model):
     )
     file = fields.Binary(attachment=True, copy=False)
     filename = fields.Char(
-        compute="_compute_filename",
-        readonly=True, store=True, size=256)
+        compute="_compute_filename", readonly=True, store=True, size=256
+    )
 
     @api.depends("name", "artist_id")
     def _compute_filename(self):

@@ -1,6 +1,6 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class MusicAlbum(models.Model):
@@ -10,8 +10,7 @@ class MusicAlbum(models.Model):
 
     name = fields.Char(required=True)
     artist_ids = fields.Many2many(
-        comodel_name="music.artist",
-        compute="_compute_artist_ids"
+        comodel_name="music.artist", compute="_compute_artist_ids"
     )
     track_ids = fields.One2many(
         comodel_name="music.track",
