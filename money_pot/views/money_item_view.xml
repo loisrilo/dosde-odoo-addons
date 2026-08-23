@@ -4,7 +4,7 @@
         <field name="name">money.item.list</field>
         <field name="model">money.item</field>
         <field name="arch" type="xml">
-            <list>
+            <list expand="1">
                 <field name="pot_id" />
                 <field name="user_id" />
                 <field name="amount" />
@@ -54,12 +54,25 @@
             <search>
                 <field name="user_id" />
                 <field name="pot_id" />
+                <filter
+                    name="filter_open_pot"
+                    string="Open Pot"
+                    domain="[('pot_id.state', '=', 'open')]"
+                />
+                <separator />
+                <filter name="filter_date" string="Date" date="date" />
                 <group expand="0" string="Group By">
                     <filter
                         name="group_by_user"
                         string="User"
                         domain="[]"
                         context="{'group_by':'user_id'}"
+                    />
+                    <filter
+                        name="group_by_pot"
+                        string="Pot"
+                        domain="[]"
+                        context="{'group_by':'pot_id'}"
                     />
                 </group>
             </search>
@@ -71,6 +84,9 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">money.item</field>
         <field name="view_mode">list,form,pivot</field>
+        <field
+            name="context"
+        >{'search_default_filter_open_pot': 1, 'search_default_group_by_pot': 1}</field>
     </record>
 
     <menuitem
