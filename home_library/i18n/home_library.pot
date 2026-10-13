@@ -1,0 +1,235 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* home_library
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__active
+#: model:ir.model.fields,field_description:home_library.field_library_genre__active
+msgid "Active"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__author_id
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
+msgid "Author"
+msgstr ""
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_author_action
+#: model:ir.ui.menu,name:home_library.menu_library_author
+msgid "Authors"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__book_ids
+msgid "Book"
+msgstr ""
+
+#. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_form
+msgid "Book Title..."
+msgstr ""
+
+#. module: home_library
+#: model:ir.ui.menu,name:home_library.menu_library_book
+#: model_terms:ir.ui.view,arch_db:home_library.library_author_view_form
+msgid "Books"
+msgstr ""
+
+#. module: home_library
+#: model:ir.ui.menu,name:home_library.menu_home_library_catalog
+msgid "Catalog"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__city
+msgid "City"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__collection
+msgid "Collection"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__company_id
+#: model:ir.model.fields,field_description:home_library.field_library_book__company_id
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__company_id
+#: model:ir.model.fields,field_description:home_library.field_library_genre__company_id
+msgid "Company"
+msgstr ""
+
+#. module: home_library
+#: model:ir.ui.menu,name:home_library.menu_home_library_data
+msgid "Configuration"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__create_uid
+#: model:ir.model.fields,field_description:home_library.field_library_book__create_uid
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__create_uid
+#: model:ir.model.fields,field_description:home_library.field_library_genre__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__create_date
+#: model:ir.model.fields,field_description:home_library.field_library_book__create_date
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__create_date
+#: model:ir.model.fields,field_description:home_library.field_library_genre__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__description
+#: model:ir.model.fields,field_description:home_library.field_library_book__description
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__description
+#: model:ir.model.fields,field_description:home_library.field_library_genre__description
+msgid "Description"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__display_name
+#: model:ir.model.fields,field_description:home_library.field_library_book__display_name
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__display_name
+#: model:ir.model.fields,field_description:home_library.field_library_genre__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__edition
+msgid "Edition"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__editorial_id
+msgid "Editorial"
+msgstr ""
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_editorial_action
+#: model:ir.ui.menu,name:home_library.menu_library_editorial
+msgid "Editorials"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__genre_id
+msgid "Genre"
+msgstr ""
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_genre_action
+#: model:ir.ui.menu,name:home_library.menu_library_genre
+msgid "Genres"
+msgstr ""
+
+#. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: home_library
+#: model:ir.module.category,name:home_library.module_category_home_library
+#: model:ir.ui.menu,name:home_library.parent_menu_home_library
+msgid "Home Library"
+msgstr ""
+
+#. module: home_library
+#: model:res.groups,name:home_library.group_home_library_manager
+msgid "Home Library Manager"
+msgstr ""
+
+#. module: home_library
+#: model:res.groups,name:home_library.group_home_library_user
+msgid "Home Library User"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__id
+#: model:ir.model.fields,field_description:home_library.field_library_book__id
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__id
+#: model:ir.model.fields,field_description:home_library.field_library_genre__id
+msgid "ID"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__write_uid
+#: model:ir.model.fields,field_description:home_library.field_library_book__write_uid
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__write_uid
+#: model:ir.model.fields,field_description:home_library.field_library_genre__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__write_date
+#: model:ir.model.fields,field_description:home_library.field_library_book__write_date
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__write_date
+#: model:ir.model.fields,field_description:home_library.field_library_genre__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model,name:home_library.model_library_author
+msgid "Library Author"
+msgstr ""
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_book_action
+#: model:ir.model,name:home_library.model_library_book
+msgid "Library Book"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model,name:home_library.model_library_editorial
+msgid "Library Editorial"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model,name:home_library.model_library_genre
+msgid "Library Genre"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_author__name
+#: model:ir.model.fields,field_description:home_library.field_library_editorial__name
+#: model:ir.model.fields,field_description:home_library.field_library_genre__name
+msgid "Name"
+msgstr ""
+
+#. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.library_author_view_form
+#: model_terms:ir.ui.view,arch_db:home_library.library_editorial_view_form
+#: model_terms:ir.ui.view,arch_db:home_library.library_genre_view_form
+msgid "Name..."
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__page_total
+msgid "Pages"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__registry_number
+msgid "Registry Number"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__name
+msgid "Title"
+msgstr ""
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__year
+msgid "Year"
+msgstr ""
