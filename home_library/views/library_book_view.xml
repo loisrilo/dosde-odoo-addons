@@ -15,6 +15,11 @@
                 <field name="page_total" />
                 <field name="genre_id" />
                 <field name="registry_number" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
             </list>
         </field>
     </record>
@@ -43,6 +48,10 @@
                             <field name="year" />
                             <field name="page_total" />
                             <field name="registry_number" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
                         </group>
                     </group>
                     <group>
@@ -67,6 +76,7 @@
                 <field name="edition" />
                 <field name="genre_id" />
                 <field name="registry_number" />
+                <field name="company_id" groups="base.group_multi_company" />
                 <group expand="0" string="Group By">
                     <filter
                         name="group_by_author"

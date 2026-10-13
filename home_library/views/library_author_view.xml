@@ -6,6 +6,11 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
             </list>
         </field>
     </record>
@@ -22,6 +27,7 @@
                         </h1>
                     </div>
                     <group>
+                        <field name="company_id" groups="base.group_multi_company" />
                         <field name="description" />
                     </group>
                     <notebook>
@@ -40,6 +46,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
             </search>
         </field>
     </record>

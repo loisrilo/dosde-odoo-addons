@@ -11,3 +11,8 @@ class LibraryGenre(models.Model):
     name = fields.Char(required=True)
     active = fields.Boolean(default=True)
     description = fields.Text()
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        default=lambda self: self.env.company,
+        index=True,
+    )
