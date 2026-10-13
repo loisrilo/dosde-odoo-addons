@@ -61,8 +61,8 @@
     <menuitem
         id="menu_library_author"
         name="Authors"
-        parent="menu_home_library_data"
+        parent="menu_home_library_catalog"
         action="library_author_action"
-        sequence="10"
+        sequence="30"
     />
 </odoo>

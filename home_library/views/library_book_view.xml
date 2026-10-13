@@ -104,17 +104,25 @@
     />
 
     <menuitem
+        id="menu_home_library_catalog"
+        name="Catalog"
+        parent="parent_menu_home_library"
+        sequence="10"
+    />
+
+    <menuitem
         id="menu_library_book"
         name="Books"
-        parent="parent_menu_home_library"
+        parent="menu_home_library_catalog"
         action="library_book_action"
         sequence="10"
     />
 
     <menuitem
         id="menu_home_library_data"
-        name="Library"
+        name="Configuration"
         parent="parent_menu_home_library"
-        sequence="50"
+        groups="group_home_library_manager"
+        sequence="100"
     />
 </odoo>
