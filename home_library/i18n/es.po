@@ -21,6 +21,15 @@ msgid "Active"
 msgstr "Activo"
 
 #. module: home_library
+#: model:ir.model.constraint,message:home_library.constraint_library_book_registry_number_company_uniq
+msgid ""
+"Another book of this company already has this registry number. Choose a "
+"different one."
+msgstr ""
+"Otro libro de esta compañía ya tiene este número de registro. Elige uno "
+"distinto."
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__author_id
 #: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
 msgid "Author"

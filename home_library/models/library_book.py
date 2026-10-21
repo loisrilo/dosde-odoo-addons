@@ -53,3 +53,12 @@ class LibraryBook(models.Model):
         default=lambda self: self.env.company,
         index=True,
     )
+
+    _sql_constraints = [
+        (
+            "registry_number_company_uniq",
+            "unique(company_id, registry_number)",
+            "Another book of this company already has this registry number. "
+            "Choose a different one.",
+        ),
+    ]

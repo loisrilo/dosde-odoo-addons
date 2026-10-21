@@ -1,8 +1,11 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
+from psycopg2 import IntegrityError
+
 from odoo.exceptions import UserError
 from odoo.tests import new_test_user, tagged
 from odoo.tests.common import TransactionCase
+from odoo.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -68,3 +71,35 @@ class TestLibraryMultiCompany(TransactionCase):
         )
         self.assertEqual(book_b.registry_number, 1)
         self.assertGreaterEqual(book_a.registry_number, 1)
+
+    def test_registry_number_unique_per_company(self):
+        book_a = self.env["library.book"].create(
+            {"name": "Book A", "author_id": self.author_a.id}
+        )
+        with mute_logger("odoo.sql_db"), self.assertRaises(IntegrityError):
+            self.env["library.book"].create(
+                {
+                    "name": "Book A bis",
+                    "author_id": self.author_a.id,
+                    "registry_number": book_a.registry_number,
+                }
+            )
+            self.env.flush_all()
+
+    def test_registry_number_kept_or_rejected_on_company_change(self):
+        book_a = self.env["library.book"].create(
+            {"name": "Book A", "author_id": self.author_shared.id}
+        )
+        book_b = (
+            self.env["library.book"]
+            .with_company(self.company_b)
+            .create({"name": "Book B", "author_id": self.author_shared.id})
+        )
+        self.assertEqual(book_b.registry_number, 1)
+        book_a.registry_number = 1000
+        book_a.company_id = self.company_b
+        self.env.flush_all()
+        self.assertEqual(book_a.registry_number, 1000)
+        with mute_logger("odoo.sql_db"), self.assertRaises(IntegrityError):
+            book_a.registry_number = book_b.registry_number
+            self.env.flush_all()
