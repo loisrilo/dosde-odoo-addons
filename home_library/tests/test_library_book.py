@@ -48,3 +48,10 @@ class TestLibraryBook(TransactionCase):
         self.assertEqual(len(tracking), 1)
         self.assertEqual(tracking.old_value_integer, old_number)
         self.assertEqual(tracking.new_value_integer, old_number + 100)
+
+    def test_settings_app(self):
+        arch = self.env["res.config.settings"].get_views([(False, "form")])["views"][
+            "form"
+        ]["arch"]
+        self.assertIn('name="home_library"', arch)
+        self.assertIn('name="home_library_catalog"', arch)

@@ -66,6 +66,7 @@ msgstr ""
 
 #. module: home_library
 #: model:ir.ui.menu,name:home_library.menu_home_library_catalog
+#: model_terms:ir.ui.view,arch_db:home_library.res_config_settings_view_form
 msgid "Catalog"
 msgstr ""
 
@@ -227,6 +228,11 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.res_config_settings_view_form
+msgid "Library"
+msgstr ""
+
+#. module: home_library
 #: model:ir.model,name:home_library.model_library_author
 msgid "Library Author"
 msgstr ""
@@ -299,6 +305,12 @@ msgstr ""
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__registry_number
 msgid "Registry Number"
+msgstr ""
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_config_settings_action
+#: model:ir.ui.menu,name:home_library.menu_library_config_settings
+msgid "Settings"
 msgstr ""
 
 #. module: home_library
