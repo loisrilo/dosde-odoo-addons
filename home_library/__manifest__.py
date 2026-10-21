@@ -10,6 +10,7 @@
     "installable": True,
     "depends": [
         "base",
+        "mail",
     ],
     "data": [
         "security/home_library_security.xml",

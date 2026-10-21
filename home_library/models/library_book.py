@@ -5,6 +5,7 @@ from odoo import fields, models
 
 class LibraryBook(models.Model):
     _name = "library.book"
+    _inherit = ["mail.thread"]
     _description = "Library Book"
     _check_company_auto = True
 
@@ -20,12 +21,14 @@ class LibraryBook(models.Model):
     name = fields.Char(
         string="Title",
         required=True,
+        tracking=True,
     )
     author_id = fields.Many2one(
         comodel_name="library.author",
         check_company=True,
         required=True,
         ondelete="restrict",
+        tracking=True,
     )
     editorial_id = fields.Many2one(
         comodel_name="library.editorial",
@@ -46,12 +49,14 @@ class LibraryBook(models.Model):
     )
     registry_number = fields.Integer(
         default=_get_registry_number,
+        tracking=True,
     )
     description = fields.Text()
     company_id = fields.Many2one(
         comodel_name="res.company",
         default=lambda self: self.env.company,
         index=True,
+        tracking=True,
     )
 
     _sql_constraints = [

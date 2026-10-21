@@ -31,3 +31,20 @@ class TestLibraryBook(TransactionCase):
             {"name": "Book 2", "author_id": self.author.id}
         )
         self.assertEqual(book_2.registry_number, book_1.registry_number + 1)
+
+    def test_registry_number_tracking(self):
+        book = self.env["library.book"].create(
+            {"name": "Tracked Book", "author_id": self.author.id}
+        )
+        old_number = book.registry_number
+        self.env.flush_all()
+        self.env.cr.precommit.run()
+        book.registry_number = old_number + 100
+        self.env.flush_all()
+        self.env.cr.precommit.run()
+        tracking = book.message_ids.tracking_value_ids.filtered(
+            lambda t: t.field_id.name == "registry_number"
+        )
+        self.assertEqual(len(tracking), 1)
+        self.assertEqual(tracking.old_value_integer, old_number)
+        self.assertEqual(tracking.new_value_integer, old_number + 100)
