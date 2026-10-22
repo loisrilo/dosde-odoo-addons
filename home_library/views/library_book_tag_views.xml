@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="library_book_tag_view_tree" model="ir.ui.view">
+        <field name="name">library.book.tag.list</field>
+        <field name="model">library.book.tag</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name" />
+                <field name="color" widget="color_picker" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="library_book_tag_view_search" model="ir.ui.view">
+        <field name="name">library.book.tag.search</field>
+        <field name="model">library.book.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <filter
+                    name="filter_archived"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="library_book_tag_action">
+        <field name="name">Tags</field>
+        <field name="res_model">library.book.tag</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <menuitem
+        id="menu_library_book_tag"
+        name="Tags"
+        parent="menu_home_library_data"
+        action="library_book_tag_action"
+        sequence="40"
+    />
+</odoo>

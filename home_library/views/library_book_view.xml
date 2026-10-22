@@ -7,14 +7,22 @@
             <list>
                 <field name="author_id" />
                 <field name="name" />
-                <field name="editorial_id" />
-                <field name="collection" />
-                <field name="city" />
-                <field name="year" />
-                <field name="edition" />
-                <field name="page_total" />
+                <field name="editorial_id" optional="show" />
+                <field name="collection" optional="show" />
+                <field name="city" optional="show" />
+                <field name="year" optional="show" />
+                <field name="edition" optional="show" />
+                <field name="page_total" optional="show" />
                 <field name="genre_id" />
-                <field name="registry_number" />
+                <field
+                    name="tag_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                    optional="show"
+                />
+                <field name="registry_number" optional="show" />
+                <field name="language" optional="hide" />
+                <field name="udc" optional="hide" />
                 <field
                     name="company_id"
                     groups="base.group_multi_company"
@@ -39,6 +47,11 @@
                         <group>
                             <field name="author_id" />
                             <field name="genre_id" />
+                            <field
+                                name="tag_ids"
+                                widget="many2many_tags"
+                                options="{'color_field': 'color'}"
+                            />
                             <field name="editorial_id" />
                             <field name="collection" />
                             <field name="edition" />
@@ -52,6 +65,16 @@
                                 name="company_id"
                                 groups="base.group_multi_company"
                             />
+                        </group>
+                    </group>
+                    <group string="Classification" name="classification">
+                        <group>
+                            <field name="language" />
+                            <field name="udc" />
+                        </group>
+                        <group>
+                            <field name="original_title" />
+                            <field name="original_language" />
                         </group>
                     </group>
                     <group>
@@ -76,6 +99,9 @@
                 <field name="year" />
                 <field name="edition" />
                 <field name="genre_id" />
+                <field name="tag_ids" />
+                <field name="udc" />
+                <field name="original_title" />
                 <field name="registry_number" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <group expand="0" string="Group By">
@@ -84,6 +110,16 @@
                         string="Author"
                         domain="[]"
                         context="{'group_by':'author_id'}"
+                    />
+                    <filter
+                        name="group_by_genre"
+                        string="Genre"
+                        context="{'group_by': 'genre_id'}"
+                    />
+                    <filter
+                        name="group_by_language"
+                        string="Language"
+                        context="{'group_by': 'language'}"
                     />
                 </group>
             </search>

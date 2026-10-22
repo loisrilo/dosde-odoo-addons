@@ -15,11 +15,17 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: home_library
+#: model:ir.model.constraint,message:home_library.constraint_library_book_tag_name_company_uniq
+msgid "A tag with this name already exists in this company."
+msgstr "Xa existe unha etiqueta con este nome nesta compañía."
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__message_needaction
 msgid "Action Needed"
 msgstr "Acción necesaria"
 
 #. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__active
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__active
 #: model:ir.model.fields,field_description:home_library.field_library_genre__active
 msgid "Active"
@@ -33,6 +39,11 @@ msgid ""
 msgstr ""
 "Outro libro desta compañía xa ten este número de rexistro. Escolle un "
 "distinto."
+
+#. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_tag_view_search
+msgid "Archived"
+msgstr "Arquivado"
 
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__message_attachment_count
@@ -52,6 +63,12 @@ msgid "Authors"
 msgstr "Autores"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__eu
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__eu
+msgid "Basque"
+msgstr "Éuscaro"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__book_ids
 msgid "Book"
 msgstr "Libro"
@@ -68,6 +85,12 @@ msgid "Books"
 msgstr "Libros"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__ca
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__ca
+msgid "Catalan"
+msgstr "Catalán"
+
+#. module: home_library
 #: model:ir.ui.menu,name:home_library.menu_home_library_catalog
 #: model_terms:ir.ui.view,arch_db:home_library.res_config_settings_view_form
 msgid "Catalog"
@@ -79,13 +102,24 @@ msgid "City"
 msgstr "Cidade"
 
 #. module: home_library
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_form
+msgid "Classification"
+msgstr "Clasificación"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__collection
 msgid "Collection"
 msgstr "Colección"
 
 #. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__color
+msgid "Color"
+msgstr "Cor"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__company_id
 #: model:ir.model.fields,field_description:home_library.field_library_book__company_id
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__company_id
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__company_id
 #: model:ir.model.fields,field_description:home_library.field_library_genre__company_id
 msgid "Company"
@@ -99,6 +133,7 @@ msgstr "Configuración"
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__create_uid
 #: model:ir.model.fields,field_description:home_library.field_library_book__create_uid
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__create_uid
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__create_uid
 #: model:ir.model.fields,field_description:home_library.field_library_genre__create_uid
 msgid "Created by"
@@ -107,6 +142,7 @@ msgstr "Creado por"
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__create_date
 #: model:ir.model.fields,field_description:home_library.field_library_book__create_date
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__create_date
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__create_date
 #: model:ir.model.fields,field_description:home_library.field_library_genre__create_date
 msgid "Created on"
@@ -123,6 +159,7 @@ msgstr "Descrición"
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__display_name
 #: model:ir.model.fields,field_description:home_library.field_library_book__display_name
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__display_name
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__display_name
 #: model:ir.model.fields,field_description:home_library.field_library_genre__display_name
 msgid "Display Name"
@@ -145,6 +182,12 @@ msgid "Editorials"
 msgstr "Editoriais"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__en
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__en
+msgid "English"
+msgstr "Inglés"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
@@ -155,7 +198,20 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (contactos)"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__fr
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__fr
+msgid "French"
+msgstr "Francés"
+
+#. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__gl
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__gl
+msgid "Galician"
+msgstr "Galego"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__genre_id
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
 msgid "Genre"
 msgstr "Xénero"
 
@@ -164,6 +220,12 @@ msgstr "Xénero"
 #: model:ir.ui.menu,name:home_library.menu_library_genre
 msgid "Genres"
 msgstr "Xéneros"
+
+#. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__de
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__de
+msgid "German"
+msgstr "Alemán"
 
 #. module: home_library
 #: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
@@ -194,6 +256,7 @@ msgstr "Usuario da biblioteca"
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__id
 #: model:ir.model.fields,field_description:home_library.field_library_book__id
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__id
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__id
 #: model:ir.model.fields,field_description:home_library.field_library_genre__id
 msgid "ID"
@@ -215,8 +278,26 @@ msgid "Is Follower"
 msgstr "É seguidor"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__it
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__it
+msgid "Italian"
+msgstr "Italiano"
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__language
+#: model_terms:ir.ui.view,arch_db:home_library.library_book_view_search
+msgid "Language"
+msgstr "Lingua"
+
+#. module: home_library
+#: model:ir.model.fields,help:home_library.field_library_book__original_language
+msgid "Language of the original work, for translations."
+msgstr "Lingua da obra orixinal, para as traducións."
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__write_uid
 #: model:ir.model.fields,field_description:home_library.field_library_book__write_uid
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__write_uid
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__write_uid
 #: model:ir.model.fields,field_description:home_library.field_library_genre__write_uid
 msgid "Last Updated by"
@@ -225,10 +306,17 @@ msgstr "Última actualización por"
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__write_date
 #: model:ir.model.fields,field_description:home_library.field_library_book__write_date
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__write_date
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__write_date
 #: model:ir.model.fields,field_description:home_library.field_library_genre__write_date
 msgid "Last Updated on"
 msgstr "Última actualización o"
+
+#. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__la
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__la
+msgid "Latin"
+msgstr "Latín"
 
 #. module: home_library
 #: model_terms:ir.ui.view,arch_db:home_library.res_config_settings_view_form
@@ -245,6 +333,11 @@ msgstr "Autor da biblioteca"
 #: model:ir.model,name:home_library.model_library_book
 msgid "Library Book"
 msgstr "Libro da biblioteca"
+
+#. module: home_library
+#: model:ir.model,name:home_library.model_library_book_tag
+msgid "Library Book Tag"
+msgstr "Etiqueta de libro da biblioteca"
 
 #. module: home_library
 #: model:ir.model,name:home_library.model_library_editorial
@@ -268,6 +361,7 @@ msgstr "Mensaxes"
 
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_author__name
+#: model:ir.model.fields,field_description:home_library.field_library_book_tag__name
 #: model:ir.model.fields,field_description:home_library.field_library_editorial__name
 #: model:ir.model.fields,field_description:home_library.field_library_genre__name
 msgid "Name"
@@ -301,9 +395,31 @@ msgid "Number of messages with delivery error"
 msgstr "Número de mensaxes con erro de entrega"
 
 #. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__original_language
+msgid "Original Language"
+msgstr "Lingua orixinal"
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__original_title
+msgid "Original Title"
+msgstr "Título orixinal"
+
+#. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__other
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__other
+msgid "Other"
+msgstr "Outra"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__page_total
 msgid "Pages"
 msgstr "Páxinas"
+
+#. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__pt
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__pt
+msgid "Portuguese"
+msgstr "Portugués"
 
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__registry_number
@@ -317,9 +433,37 @@ msgid "Settings"
 msgstr "Axustes"
 
 #. module: home_library
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__language__es
+#: model:ir.model.fields.selection,name:home_library.selection__library_book__original_language__es
+msgid "Spanish"
+msgstr "Castelán"
+
+#. module: home_library
+#: model:ir.actions.act_window,name:home_library.library_book_tag_action
+#: model:ir.model.fields,field_description:home_library.field_library_book__tag_ids
+#: model:ir.ui.menu,name:home_library.menu_library_book_tag
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__name
 msgid "Title"
 msgstr "Título"
+
+#. module: home_library
+#: model:ir.model.fields,help:home_library.field_library_book__original_title
+msgid "Title of the original work, for translations."
+msgstr "Título da obra orixinal, para as traducións."
+
+#. module: home_library
+#: model:ir.model.fields,field_description:home_library.field_library_book__udc
+msgid "UDC"
+msgstr "CDU"
+
+#. module: home_library
+#: model:ir.model.fields,help:home_library.field_library_book__udc
+msgid "Universal Decimal Classification of the book, e.g. 821.134.4-31."
+msgstr "Clasificación Decimal Universal do libro, p. ex. 821.134.4-31."
 
 #. module: home_library
 #: model:ir.model.fields,field_description:home_library.field_library_book__year

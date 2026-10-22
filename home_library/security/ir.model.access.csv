@@ -7,3 +7,5 @@ library_genre_user,money.genre user,model_library_genre,group_home_library_user,
 library_genre_manager,money.genre manager,model_library_genre,group_home_library_manager,1,1,1,1
 library_editorial_user,money.editorial user,model_library_editorial,group_home_library_user,1,0,0,0
 library_editorial_manager,money.editorial manager,model_library_editorial,group_home_library_manager,1,1,1,1
+library_book_tag_user,library.book.tag user,model_library_book_tag,group_home_library_user,1,0,0,0
+library_book_tag_manager,library.book.tag manager,model_library_book_tag,group_home_library_manager,1,1,1,1

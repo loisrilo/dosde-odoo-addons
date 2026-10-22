@@ -19,6 +19,7 @@
         "views/library_author_view.xml",
         "views/library_editorial_view.xml",
         "views/library_genre_view.xml",
+        "views/library_book_tag_views.xml",
         "views/res_config_settings_views.xml",
     ],
 }

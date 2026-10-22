@@ -2,6 +2,20 @@
 
 from odoo import fields, models
 
+LANGUAGES = [
+    ("gl", "Galician"),
+    ("es", "Spanish"),
+    ("pt", "Portuguese"),
+    ("ca", "Catalan"),
+    ("eu", "Basque"),
+    ("en", "English"),
+    ("fr", "French"),
+    ("it", "Italian"),
+    ("de", "German"),
+    ("la", "Latin"),
+    ("other", "Other"),
+]
+
 
 class LibraryBook(models.Model):
     _name = "library.book"
@@ -47,11 +61,27 @@ class LibraryBook(models.Model):
         check_company=True,
         ondelete="restrict",
     )
+    tag_ids = fields.Many2many(
+        comodel_name="library.book.tag",
+        string="Tags",
+        check_company=True,
+    )
     registry_number = fields.Integer(
         default=_get_registry_number,
         tracking=True,
     )
     description = fields.Text()
+    language = fields.Selection(selection=LANGUAGES)
+    original_title = fields.Char(help="Title of the original work, for translations.")
+    original_language = fields.Selection(
+        selection=LANGUAGES,
+        help="Language of the original work, for translations.",
+    )
+    udc = fields.Char(
+        string="UDC",
+        index=True,
+        help="Universal Decimal Classification of the book, e.g. 821.134.4-31.",
+    )
     company_id = fields.Many2one(
         comodel_name="res.company",
         default=lambda self: self.env.company,
